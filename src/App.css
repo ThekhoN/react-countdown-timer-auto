@@ -1,0 +1,20 @@
+.genericTimerContainer {
+  width: 480px;
+  text-align: center;
+  padding: 30px 0 40px 0;
+  margin: 0 auto;
+  background: #ccc; /* IE9 fallback */
+  background-image: linear-gradient(274deg, #dd5e89, #f7bb97);
+  color: #ffffff;
+}
+
+.genericTimerContainer p {
+  display: inline-block;
+  width: 76px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.genericTimerContainer span {
+  font-weight: bold;
+}
