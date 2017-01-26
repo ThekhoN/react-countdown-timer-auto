@@ -6,15 +6,14 @@ to init the app,
 ```
  npm run start
 ```
-
-<br/>
 <br/>
 
 <h2>USE</h2>
-<bold>date & time format ~ MM/DD/YYY HH:MM:SS 24 hrs</bold>
-<bold>offsetGMT ~ 'GMT+0530'</bold>
+<h3>Demo: http://codepen.io/TheEnd/full/qRPajO/ </h3>
+<h3>date & time format ~ MM/DD/YYY HH:MM:SS 24 hrs</h3>
+<h3>offsetGMT ~ 'GMT+0530'</h3>
 <br/>
-<bold>(IE9 support, avoid using time/date libraries)</bold>
+<h3>(IE9 support, avoid using time/date libraries)</h3>
 
 *Timer counts down to a defined endTime
 
