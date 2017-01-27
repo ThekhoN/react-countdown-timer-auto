@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
 import TimerComponent from '../Component/TimerComponent'
 import isValidDate from '../Module/isValidDate'
 
@@ -18,8 +18,6 @@ class TimerContainer extends Component {
     super(props)
     this.state = {
       id: this.props.id?this.props.id:'',
-      defaultStartTime:'01/13/2016 00:00:00',
-      defaultOffsetGMT:'GMT+0530',
       offsetGMT: this.props.offsetGMT?this.props.offsetGMT:'',
       startTime: this.props.startTime?this.props.startTime:'',
       endTime: this.props.endTime?this.props.endTime:'',
@@ -31,9 +29,9 @@ class TimerContainer extends Component {
   }
   init(){
     const callback = this.state.callback
-    const offsetGMT = this.state.offsetGMT?this.state.offsetGMT: this.state.defaultOffsetGMT
+    const offsetGMT = this.state.offsetGMT
     let endTime = this.state.endTime
-    let startTime = this.state.startTime?this.state.startTime: this.state.defaultStartTime
+    let startTime = this.state.startTime
 
     //validation
     if(!isValidDate(endTime)){
@@ -51,7 +49,6 @@ class TimerContainer extends Component {
     const startTimeMs = new Date(startTime);
     const endTimeMs = new Date(endTime);
     const currentTimeMs = new Date();
-
 
     if(endTimeMs > currentTimeMs && currentTimeMs >= startTimeMs){
       //  +++++ start the timer +++++
@@ -112,6 +109,20 @@ class TimerContainer extends Component {
     return(<div className='timerWrapper'>{this.state.showTimer && <TimerComponent timerState={this.state}/>}
     </div>)
   }
+}
+
+//define propTypes
+TimerContainer.propTypes = {
+  startTime: PropTypes.string,
+  endTime: PropTypes.string,
+  callback: PropTypes.func,
+  offsetGMT: PropTypes.string,
+  id: PropTypes.string
+}
+//define defaultProps
+TimerContainer.defaultProps = {
+  offsetGMT: 'GMT+0530',
+  startTime: '01/13/2016 00:00:00'
 }
 
 export default TimerContainer

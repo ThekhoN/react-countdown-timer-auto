@@ -19,7 +19,6 @@ class App extends Component {
   render() {
     return (<div>
       <TimerContainer
-          startTime=''
           endTime='01/29/2017 18:49:00'
           callback={timer01Callback}
           offsetGMT='GMT+0130'
@@ -27,7 +26,7 @@ class App extends Component {
         <br/>
         <TimerContainer
             startTime='01/26/2017 02:43:00'
-            endTime='01/26/2017 15:30:00'
+            endTime='03/26/2017 15:30:00'
             callback={timer02Callback}
             offsetGMT='GMT+0230'
             id='Timer02'/>
